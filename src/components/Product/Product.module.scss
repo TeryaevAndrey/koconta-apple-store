@@ -1,0 +1,54 @@
+@import "../../index.scss";
+
+.product {
+  width: 250px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 25px;
+  background-color: $gray;
+  border-radius: $border-radius-normal;
+  box-shadow: $box-shadow-main;
+  font-size: $font-size-normal;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .img {
+    width: 200px;
+    height: 210px;
+    object-fit: contain;
+  }
+
+  .name {
+    margin-top: 10px;
+  }
+
+  .memoryList {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .memoryItem {
+      list-style-type: none;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+
+    .add {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+}
