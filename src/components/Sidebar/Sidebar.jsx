@@ -8,7 +8,7 @@ const Sidebar = (props) => {
         {props.menuItems.map((item, index) => (
           <li
             key={index}
-            onClick={() => props.handlerItem(index)}
+            onClick={() => props.handleItem(index)}
             className={props.activeItem === index ? styles.active : null}
           >
             {item}
