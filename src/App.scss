@@ -19,6 +19,7 @@ body {
   max-width: 1200px;
   padding: 0 10px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .mainWrapper {
@@ -34,6 +35,7 @@ body {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 70px;
+    padding-bottom: 50px;
 
     .outStock {
       position: absolute;

@@ -17,8 +17,8 @@ const Sidebar = (props) => {
       </ul>
       <p>Цена</p>
       <div className={styles.priceInputWrapper}>
-        <input type="text" placeholder="от" />
-        <input type="text" placeholder="до" />
+        <input onChange={props.changeBefore} type="text" placeholder="от" />
+        <input onChange={props.changeAfter} type="text" placeholder="до" />
       </div>
     </div>
   );

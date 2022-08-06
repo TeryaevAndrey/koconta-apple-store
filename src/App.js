@@ -13,6 +13,8 @@ function App() {
   const [products, setProducts] = React.useState([]);
   const [activeItem, setActiveItem] = React.useState(0);
   const [searchValue, setSearchValue] = React.useState("");
+  const [beforePrice, setBeforePrice] = React.useState(0);
+  const [afterPrice, setAfterPrice] = React.useState(0);
 
   const menuItems = [
     "iPhone",
@@ -28,6 +30,18 @@ function App() {
   const filterProducts = products.filter(
     (element) => {
       if(!searchValue.length) {
+        if(!afterPrice.length && beforePrice.length) {
+          return (element.price >= beforePrice) && element.type === activeItemMenu;
+        }
+
+        if(!beforePrice.length && afterPrice.length) {
+          return (element.price <= afterPrice) && element.type === activeItemMenu;
+        }
+
+        if(beforePrice.length && afterPrice.length) {
+          return (element.price >= beforePrice && element.price <= afterPrice) && element.type === activeItemMenu;
+        }
+
         return element.type === activeItemMenu;
       } else {
         return element.name.toLowerCase().includes(searchValue.toLowerCase());
@@ -49,6 +63,14 @@ function App() {
     setSearchValue(event.target.value);
   };
 
+  const onChangeBeforePrice = (event) => {
+    setBeforePrice(event.target.value);
+  };
+
+  const onChangeAfterPrice = (event) => {
+    setAfterPrice(event.target.value);
+  };
+
   return (
     <div className="App">
       <Header
@@ -61,6 +83,10 @@ function App() {
           menuItems={menuItems}
           handleItem={handleItem}
           activeItem={activeItem}
+          beforePrice={beforePrice}
+          afterPrice={afterPrice}
+          changeBefore={onChangeBeforePrice}
+          changeAfter={onChangeAfterPrice}
         />
         <div className="products">
           {
