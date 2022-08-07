@@ -1,0 +1,47 @@
+@import '../../index.scss';
+
+.cartProduct {
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+    padding: 15px 20px;
+    background-color: $gray;
+    color: $dark;
+    border-radius: $border-radius-normal;
+    box-shadow: $box-shadow-main;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-normal;
+
+    .productImg {
+        width: 115px;
+        height: 115px;
+        object-fit: contain;
+    }
+
+    .delete {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 7px;
+        right: 8px;
+        cursor: pointer;
+
+        span {
+            margin-right: 5px;
+        }
+
+        .deleteImg {
+            width: 23px;
+            height: 23px;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

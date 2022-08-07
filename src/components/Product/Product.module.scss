@@ -28,16 +28,6 @@
     margin-top: 10px;
   }
 
-  .memoryList {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    .memoryItem {
-      list-style-type: none;
-    }
-  }
-
   .footer {
     display: flex;
     justify-content: space-between;
@@ -46,8 +36,8 @@
     margin-top: 15px;
 
     .add {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       cursor: pointer;
     }
   }

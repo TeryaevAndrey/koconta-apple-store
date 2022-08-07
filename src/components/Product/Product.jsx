@@ -9,16 +9,9 @@ const Product = (props) => {
     <div className={styles.product}>
       <img className={styles.img} src={props.info.img} alt="productImg" />
       <h2 className={styles.name}>{props.info.name}</h2>
-      <ul className={styles.memoryList}>
-        {
-          props.info.memory.map((item, index) => (
-            <li key={index} className={styles.memoryItem}>{item}</li>
-          ))
-        }
-      </ul>
       <div className={styles.footer}>
         <span className={styles.price}>от {props.info.price} руб</span>
-        <img className={styles.add} src={add} alt="add" />
+        <img onClick={() => props.addProductToCart({id: props.info.id,img: props.info.img, name: props.info.name, price: props.info.price})} className={styles.add} src={add} alt="add" />
       </div>
     </div>
   );

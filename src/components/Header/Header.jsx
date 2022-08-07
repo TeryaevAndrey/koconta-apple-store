@@ -5,8 +5,9 @@ import logo from "../../img/logo.svg";
 import cart from "../../img/cart.svg";
 import search from '../../img/search.svg';
 import clear from '../../img/close.svg';
+import Cart from "../Cart/Cart";
 
-const Header = ({changeSearch, searchValue, setSearchValue}) => {
+const Header = ({changeSearch, searchValue, setSearchValue, cartOpen, setCartOpen}) => {
   return (
     <div className={styles.header}>
       <a className={styles.logo} href="#">
@@ -19,7 +20,7 @@ const Header = ({changeSearch, searchValue, setSearchValue}) => {
             searchValue.length > 0 && <img onClick={() => setSearchValue('')} className={styles.clearImg} src={clear} alt="clear" />
           }
         </div>
-      <div className={styles.cartWrapper}>
+      <div onClick={() => setCartOpen(!cartOpen)} className={styles.cartWrapper}>
         <span className={styles.cartText}>Корзина</span>
         <img className={styles.cartImg} src={cart} alt="cart" />
       </div>
