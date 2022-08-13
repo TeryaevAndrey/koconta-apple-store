@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/koconta-apple-store/static/css/main.ac447cfb.css",
+    "main.js": "/koconta-apple-store/static/js/main.b2130891.js",
+    "static/media/logo.svg": "/koconta-apple-store/static/media/logo.7ef8da5e2d7495b0ef198825e6c7f3be.svg",
+    "static/media/clearCart.svg": "/koconta-apple-store/static/media/clearCart.6381d950d48e4274fccb4ed841bb0821.svg",
+    "static/media/sadSmile.svg": "/koconta-apple-store/static/media/sadSmile.1ba856433e756a61c3b96b6bb1aad3e0.svg",
+    "static/media/cart.svg": "/koconta-apple-store/static/media/cart.ac09840a27f820b0ab4758a17ffc6091.svg",
+    "static/media/add.svg": "/koconta-apple-store/static/media/add.c687829df54166165ab9e85434e95e89.svg",
+    "static/media/search.svg": "/koconta-apple-store/static/media/search.f7a26ab2c1e6ae877b07de2d73c3ff06.svg",
+    "index.html": "/koconta-apple-store/index.html",
+    "static/media/close.svg": "/koconta-apple-store/static/media/close.aac73cf0d96d956a64823afe21da95f9.svg",
+    "main.ac447cfb.css.map": "/koconta-apple-store/static/css/main.ac447cfb.css.map",
+    "main.b2130891.js.map": "/koconta-apple-store/static/js/main.b2130891.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac447cfb.css",
+    "static/js/main.b2130891.js"
+  ]
+}
