@@ -74,3 +74,17 @@
     }
   }
 }
+
+@media(max-width: 600px) {
+  .header {
+
+    .cartText {
+      display: none;
+    }
+  
+    .searchInputWrapper {
+      margin: 0 10px;
+      width: 180px;
+    }
+  }
+}

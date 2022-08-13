@@ -18,6 +18,7 @@ function App() {
   const [afterPrice, setAfterPrice] = React.useState(0);
   const [cartOpen, setCartOpen] = React.useState(false);
   const [cartProducts, setCartProducts] = React.useState([]);
+  const [order, setOrder] = React.useState(false);
 
   const menuItems = [
     "iPhone",
@@ -81,13 +82,18 @@ function App() {
   };
 
   const addProductToCart = (obj) => {
-    axios.post('https://62e998663a5f1572e86cf2ce.mockapi.io/cart', obj);
-    setCartProducts(prev => [...prev, obj])
+    axios.post("https://62e998663a5f1572e86cf2ce.mockapi.io/cart", obj);
+    setCartProducts((prev) => [...prev, obj]);
+    setOrder(false);
   };
 
   const deleteProductFromCart = (id) => {
-    setCartProducts(prev => prev.filter(item => item.id !== id));
+    setCartProducts((prev) => prev.filter((item) => item.id !== id));
     axios.delete(`https://62e998663a5f1572e86cf2ce.mockapi.io/cart/${id}`);
+  };
+
+  const orderProducts = () => {
+    cartProducts.length > 0 && setOrder(true);
   };
 
   return (
@@ -112,7 +118,12 @@ function App() {
         <div className="products">
           {filterProducts.length > 0 ? (
             filterProducts.map((product) => (
-              <Product key={product.id} info={product} addProductToCart={addProductToCart}/>
+              <Product
+                key={product.id}
+                info={product}
+                addProductToCart={addProductToCart}
+                cartProducts={cartProducts}
+              />
             ))
           ) : (
             <div className="outStock">
@@ -122,7 +133,16 @@ function App() {
           )}
         </div>
       </div>
-      {cartOpen && <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} cartProducts={cartProducts} deleteProductFromCart={deleteProductFromCart}/>}
+      {cartOpen && (
+        <Cart
+          cartOpen={cartOpen}
+          setCartOpen={setCartOpen}
+          cartProducts={cartProducts}
+          deleteProductFromCart={deleteProductFromCart}
+          orderProducts={orderProducts}
+          order={order}
+        />
+      )}
     </div>
   );
 }

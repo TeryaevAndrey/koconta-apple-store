@@ -50,3 +50,20 @@ body {
     }
   }
 }
+
+@media(max-width: 600px) {
+  .mainWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .products {
+      margin-top: 50px;
+      justify-content: center;
+
+      .outStock {
+        top: 12%;
+      }
+    }
+  }
+}
